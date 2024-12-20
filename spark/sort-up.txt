@@ -1,0 +1,36 @@
+100006804条数据 user-5G有200000000（2亿） /home/zyh/user有10000000(1千万）
+
+本地环境测试local[*]：
+        hdfs://node2:9820/wcy_data/Wordcount/20g
+            driver memory 1g
+                原始的 BlockStoreShuffleReader.scala策略耗费时间是 80s
+                    总共耗费时间：143 程序总耗费时间：294
+                修改后 BlockStoreShuffleReader.scala策略耗费时间是 65s
+                    总共耗费时间：90 程序总耗费时间：233
+                    这个数据量是Hibench生成的，20个G数据但是shuffle之后只有不到1个g了
+
+        hdfs://node2:9820/wcy_data/Wordcount/40g
+            driver memory 1g
+                修改后 总共耗费时间：253  173s  总共耗费时间：206
+                    总共耗费时间：145 程序总耗费时间：441
+                原始的 总共耗费时间：113  171s
+                    总共耗费时间：142 程序总耗费时间：435
+
+        hdfs://node2:9820/wcy_data/Wordcount/10g
+                  原始的
+                   总共耗费时间：39 程序总耗费时间：115
+                   总共耗费时间：52 程序总耗费时间：125
+                    修改后
+                    总共耗费时间：66 程序总耗费时间：157
+                    总共耗费时间：62 程序总耗费时间：148
+
+         hdfs://node2:9820/wcy_data/Wordcount/80g
+                    原始的
+                      总共耗费时间：313          程序总耗费时间：829
+                      总共耗费时间：229           程序总耗费时间：741
+                    修改后
+                    总共耗费时间：252 程序总耗费时间：762
+                    总共耗费时间：394 程序总耗费时间：926
+
+
+local[20]  1g
