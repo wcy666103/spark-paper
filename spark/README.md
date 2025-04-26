@@ -123,3 +123,10 @@ in the online documentation for an overview on how to configure Spark.
 
 Please review the [Contribution to Spark guide](https://spark.apache.org/contributing.html)
 for information on how to get started contributing to the project.
+
+
+### Supported Dynamic-awareness-based Spark Execution Plan Selection and Shuffle Optimization Strategies: ###
+
+The D2CS and PASA algorithm modules have been embedded
+
+---

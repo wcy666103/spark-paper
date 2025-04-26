@@ -161,3 +161,8 @@ There are totally 29 workloads in HiBench. The workloads are divided into 6 cate
 ---
 
 
+### Supported Dynamic-awareness-based Spark Execution Plan Selection and Shuffle Optimization Strategies: ###
+
+After the corresponding source code modification and script implementation, it is easier to randomly generate the data used by D2CS and PASA
+
+---

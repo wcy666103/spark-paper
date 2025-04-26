@@ -1,13 +1,25 @@
 # spark-paper
-
-It's in this warehouse
-
-The spark.tar package is a modified version of the spark source code, adding physics plans, shuffle aggregation sorting, etc., as well as intermediate files for my experiments.
-
-The hibench. tar package was used to generate the experiment data, and I modified the Hibench source code and added some personalization to capture the resource consumption of the experiment.
-
-The pythonProject.tar package is a collection of scripts that I use to dynamically fetch experimental data by running valid http requests.
+This repository supports the research described in the paper "Dynamic-awareness-based Spark Execution Plan Selection and Shuffle Optimization Strategies", 
+submitted to the **IAENG International Journal of Computer Science** on November 11, 2024. It contains the source code, experimental data, and auxiliary scripts used in the study.
 
 
+## Repository Structure
+1. spark.tar
 
-Limited by the size of Github single file, training data and result set, please contact my email and I will send it to you in the form of attachment.
+   + Modified Spark 3.0.0 source code with key optimizations:
+     + Custom physical execution plans for the D2CS strategy, enabling dynamic selection between Driver-side and cluster-side execution.
+     + Enhanced ShuffleRead pipeline implementing the PASA strategy, including parallel aggregation-sorting mechanisms and memory optimization logic.
+     + Intermediate files from experimental evaluations (e.g., spill statistics, task execution logs).
+2. hibench.tar
+   + Customized HiBench benchmark suite for generating multi-scale datasets:
+     + Modified to produce Parquet-formatted datasets (60 GB–200 GB) used in performance tests.
+     + Added resource monitoring hooks to capture CPU/memory/disk I/O metrics during experiment runs.
+3. pythonProject.tar
+   + Scripts for automated experimental data collection:
+     + Python-based HTTP request handlers to fetch real-time metrics from Prometheus-Grafana monitoring systems.
+     + Data processing scripts for generating performance tables and visualization data.
+
+
+## Data Availability
+   Due to GitHub's single-file size limit, the full training datasets and detailed result sets are not hosted here. For reproducibility, please contact the corresponding author via email to request these materials as attachments.
+   This work corresponds to the research article submitted to IAENG International Journal of Computer Science (submission date: November 11, 2024). For citation and usage, please reference the published version once available.
